@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Exercise 5 - CSS Click Events</title>
+<link href="../resources/reset.css" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width">
+    <style>
+        input[type=checkbox]{
+            display:none;
+        }
+        label{
+            cursor:pointer;
+            padding:3px;
+            border:1px solid #A8A8A8;
+        }
+        input[type=checkbox]:checked ~ #target {
+            background:#ffb101;
+        }
+        #target{
+            transition: background 1.5s ease;
+        }
+        #zoom{
+            width: 150px;
+            transition: 1s ease-in-out;
+        }
+        #zoom:target{
+            width: 400px;
+        }
+       
+    </style>
+</head>
+<body>
+<h1>Exercise 5: CSS Click Events</h1>
+<input type='checkbox' id='toggle'/>
+<label for='toggle'>Click me!</label>
+<div id='target'>
+    <p>Object being changed</p>
+</div>
+<br>
+<h1>Exercise 5b - Click Events (part 2)</h1>
+<figure>
+    <img src="../resources/Jupiter.png" id="zoom">
+    <figcaption>
+        <a href="#zoom">zoom in</a> | <a href="#">zoom out</a> Note: the lorempixel link wasn't working for me, so I just used the pic of Jupiter instead.
+    </figcaption>
+</figure>
+</body>
+</html>

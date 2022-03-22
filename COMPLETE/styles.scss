@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: radial-gradient(rgb(0, 3, 24) 10%, rgb(0, 8, 68) 90%);
+}
+h1{
+    text-align: center;
+    font-family: 'Helvetica';
+    margin-bottom: 3%;
+    color: #856088;
+}
+a{
+    text-decoration: none;
+    color: #856088;
+    padding: -1%;
+    border-radius: 5px;
+    font-family: 'Helvetica';
+}
+a:hover{
+    background-color: white;
+}
+table{
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    font-size: 2vw;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+td{
+    padding: -1%;
+}
+.content{
+    background-color: rgba(255, 255, 255, .5);
+    padding: 2%;
+    border-radius: 25px;
+    margin-left: 23%;
+    margin-top: 5%;
+    width: 50%;
+    border: gradient black 5px;;
+    position: absolute;
+}
+
+@for $i from 1 through 175{
+    .glow-#{$i} {
+        margin-left: random(99) + vw;
+        width: random(4) + px;
+        height: random(4) + px;
+        background-color:white;
+        border-radius: 50%;
+        box-shadow: 0 0 1px 1px white;
+        animation-name: twinkle;
+        animation-delay: random(5) + s;
+        animation-iteration-count: infinite;
+        animation-duration: random(5) + s;
+        margin-bottom: .9px;
+        opacity: random() +.001;
+        position: relative;
+        z-index: -1;
+    }
+}
+
+@keyframes twinkle{
+    0%{box-shadow: 0 0 1px 1px white;}
+    50%{box-shadow: 0 0 2px 2px white;}
+    100%{box-shadow: 0 0 1px 1px white;}
+}

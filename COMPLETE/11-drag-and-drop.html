@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <head>
+        <title>Exercise 11</title>
+        <style>
+            #space{
+                height: 400px;
+                width: 800px;
+                background-image: url(../resources/wormhole.jpg);
+                position: absolute;
+            }
+            #tardis{
+                height: 200px;
+                width: 200px;
+                background-image: url(../resources/tardis.png);
+                position: absolute;
+                margin-top: 100px;
+            }
+            #blackhole{
+                height: 300px;
+                width: 400px;
+                position: absolute;
+                margin-top: 50px;
+                margin-left: 300px;
+            }
+            .animated{
+                animation: spin 3s ease-out;
+                animation-fill-mode: forwards;
+            }
+            @keyframes spin{ 
+                0% {transform:rotate(0deg) scale(1)}
+                100% {transform:rotate(720deg) scale(.01)}
+            }
+        </style>
+        <script src="../resources/jquery.min.js"></script>
+        <script src="../resources/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <div id="space">
+            <div id="blackhole"></div>
+            <div id="tardis"></div>
+        </div>
+        <script>
+            $('#tardis').draggable();
+            $('#blackhole').droppable({drop:destroy});
+            function destroy(){
+                $('#tardis').animate({top: '60px', left:'450px'}, 3000, 'easeOutQuad');
+                $('#tardis').addClass('animated');
+            }
+        </script>
+    </body>
+</html>

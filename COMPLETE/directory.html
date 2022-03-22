@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interaction Design</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+            <script src="../resources/jquery.min.js"></script>
+            <script src="../resources/jquery.easing.js"></script>
+            <script src="../resources/jquery-ui.min.js"></script>
+    </head>
+    <body onload="addStars()">
+        <section class="content">
+        <h1>Michael Brady's Interaction Design Exercises</h1>
+        <table>
+            <tr>
+                <td><a href="1-easing.html">1. Easing  </a></td>
+                <td><a href="8-jquery-sequencing.html">8. jQuery Sequencing</a></td>
+            </tr>
+            <tr>
+                <td><a href="2-keyframes.html">2. Keyframes  </a></td>
+                <td><a href="9-click-event.html">9. Click Event</a></td>
+            </tr>
+            <tr>
+                <td><a href="3-sequencing.html">3. Sequencing  </a></td>
+                <td><a href="10-conditional-logic.html">10. Conditional Logic</a></td>
+            </tr>
+            <tr>
+                <td><a href="4-dropdownMenu.html">4. Dropdown Menu  </a></td>
+                <td><a href="11-drag-and-drop.html">11. Drag and Drop</a></td>
+            </tr>
+            <tr>
+                <td><a href="5-css-click-events.html">5. CSS Click Events  </a></td>
+                <td><a href="12-more-drag-and-drop.html">12. More Drag and Drop</a></td>
+            </tr>
+            <tr>
+                <td><a href="6-css-lightbox.html">6. CSS Lightbox  </a></td>
+                <td><a href="13-parallax.html">13. Parallax</a></td>
+            </tr>
+            <tr>
+                <td><a href="7-jquery.html">7. jQuery  </a></td>
+                <td><a href="14-mars.html">14. Mars</a></td>
+            </tr>
+        </table>
+        </section>
+        <script>
+            function addStars(){
+                var classnum = 1;
+                var idnum = 1;
+                for(let i =0; i<175; i++){
+                    var star = "<div></div>";
+                    $("div").attr("id", idnum);
+                    $("#"+idnum).addClass("glow-" + classnum).removeClass("glow-" + (classnum-1));;
+                    $("body").after(star);
+                    classnum ++;    
+                }
+                
+            }
+        </script>
+    </body>
+</html>
