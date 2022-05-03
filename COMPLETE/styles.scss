@@ -4,22 +4,39 @@
 }
 body{
     background-image: radial-gradient(rgb(0, 3, 24) 10%, rgb(0, 8, 68) 90%);
+    width: 100%;
+}
+@font-face {
+    font-family: alien;
+    src: url(AlienLeague3D-lypZ.otf) format("opentype");
+}
+@font-face {
+    font-family: mons olympia;
+    src: url(MonsOlympiaCondensed-LG3E.ttf) format("truetype");
+}
+li{
+    margin-left: 30px;
+    font-family: mons olympia;
+    color: white;
+    font-size: 30px;
 }
 h1{
     text-align: center;
-    font-family: 'Helvetica';
+    font-family: alien;
     margin-bottom: 3%;
-    color: #856088;
+    color: white;
+    font-size: 40px;
+    margin-top: 10px;
 }
 a{
     text-decoration: none;
-    color: #856088;
+    color: white;
     padding: -1%;
     border-radius: 5px;
-    font-family: 'Helvetica';
+    font-family: mons olympia;
 }
 a:hover{
-    background-color: white;
+    color: #9ccddc;
 }
 table{
     margin-right: auto;
@@ -32,14 +49,22 @@ td{
     padding: -1%;
 }
 .content{
-    background-color: rgba(255, 255, 255, .5);
-    padding: 2%;
-    border-radius: 25px;
-    margin-left: 23%;
-    margin-top: 5%;
-    width: 50%;
-    border: gradient black 5px;;
+    background-image: linear-gradient(to right, rgb(0,0,0), rgba(0,0,0,0) 90%);
+    width: 40%;
+    border: gradient black 5px;
     position: absolute;
+    height: 100vh;
+    animation-name: move;
+    animation-duration: 1s;
+    padding-left: 10px;
+}
+@keyframes move{
+    0%{
+        transform: translateX(-40%)
+    }
+    100%{
+        transform: translateX(0)
+    }
 }
 
 @for $i from 1 through 175{
@@ -65,4 +90,95 @@ td{
     0%{box-shadow: 0 0 1px 1px white;}
     50%{box-shadow: 0 0 2px 2px white;}
     100%{box-shadow: 0 0 1px 1px white;}
+}
+/*280px — 480px: Mobile devices*/
+@media only screen and (min-width: 280px) and (max-width: 480px){
+    h1{
+        font-size: 30px;
+    }
+    li{
+        font-size: 20px;
+    }
+    @for $i from 1 through 175{
+        .glow-#{$i} {
+            margin-left: random(99) + vw;
+            width: random(4) + px;
+            height: random(4) + px;
+            background-color:white;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px white;
+            animation-name: twinkle;
+            animation-delay: random(5) + s;
+            animation-iteration-count: infinite;
+            animation-duration: random(5) + s;
+            margin-bottom: 3px;
+            opacity: random() +.001;
+            position: relative;
+            z-index: -1;
+        }
+    }
+}
+/*481px — 768px: iPads, Tablets*/
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    @for $i from 1 through 175{
+        .glow-#{$i} {
+            margin-left: random(99) + vw;
+            width: random(4) + px;
+            height: random(4) + px;
+            background-color:white;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px white;
+            animation-name: twinkle;
+            animation-delay: random(5) + s;
+            animation-iteration-count: infinite;
+            animation-duration: random(5) + s;
+            margin-bottom: 3px;
+            opacity: random() +.001;
+            position: relative;
+            z-index: -1;
+        }
+    }
+}
+/*769px — 1024px: Small screens, laptops*/
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    @for $i from 1 through 175{
+        .glow-#{$i} {
+            margin-left: random(99) + vw;
+            width: random(4) + px;
+            height: random(4) + px;
+            background-color:white;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px white;
+            animation-name: twinkle;
+            animation-delay: random(5) + s;
+            animation-iteration-count: infinite;
+            animation-duration: random(5) + s;
+            margin-bottom: 5px;
+            opacity: random() +.001;
+            position: relative;
+            z-index: -1;
+        }
+    }
+}
+
+/*NEST HUB MAX*/
+@media only screen and (width: 1280px) and (height: 800px){
+    @for $i from 1 through 175{
+        .glow-#{$i} {
+            margin-left: random(99) + vw;
+            width: random(4) + px;
+            height: random(4) + px;
+            background-color:white;
+            border-radius: 50%;
+            box-shadow: 0 0 1px 1px white;
+            animation-name: twinkle;
+            animation-delay: random(5) + s;
+            animation-iteration-count: infinite;
+            animation-duration: random(5) + s;
+            margin-bottom: 2px;
+            opacity: random() +.001;
+            position: relative;
+            z-index: -1;
+        }
+    }
 }
