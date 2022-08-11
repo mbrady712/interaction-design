@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interaction Design</title>
+        <link rel="stylesheet" type="text/css" href="complete/styles.css">
+            <script src="resources/jquery.min.js"></script>
+            <script src="resources/jquery.easing.js"></script>
+            <script src="resources/jquery-ui.min.js"></script>
+            <meta content="width=device-width, initial-scale=1" name="viewport" />
+    </head>
+    <body onload="addStars()">
+        <section class="content">
+        <h1>interaction Design Exercises</h1>
+        <ol>
+            <li><a href="complete/1-easing.html">Easing</a></li>
+            <li><a href="complete/2-keyframes.html">Keyframes</a></li>
+            <li><a href="complete/3-sequencing.html">Sequencing</a></li>
+            <li><a href="complete/4-dropdownMenu.html">Dropdown Menu</a></li>
+            <li><a href="complete/5-css-click-events.html">CSS Click Events</a></li>
+            <li><a href="complete/6-css-lightbox.html">CSS Lightbox</a></li>
+            <li><a href="complete/7-jquery.html">jQuery</a></li>
+            <li><a href="complete/8-jquery-sequencing.html">jQuery Sequencing</a></li>
+            <li><a href="complete/9-click-event.html">Click Event</a></li>
+            <li><a href="complete/10-conditional-logic.html">Conditional Logic</a></li>
+            <li><a href="complete/11-drag-and-drop.html">Drag and Drop</a></li>
+            <li><a href="complete/12-more-drag-and-drop.html">More Drag and Drop</a></li>
+            <li><a href="complete/13-parallax.html">Parallax</a></li>
+            <li><a href="complete/14-mars.html">Mars</a></li>
+        </ol>
+        </section>
+        <script>
+            function addStars(){
+                var classnum = 1;
+                var idnum = 1;
+                for(let i =0; i<175; i++){
+                    var star = "<div></div>";
+                    $("div").attr("id", idnum);
+                    $("#"+idnum).addClass("glow-" + classnum).removeClass("glow-" + (classnum-1));;
+                    $("body").after(star);
+                    classnum ++;    
+                }
+                
+            }
+        </script>
+    </body>
+</html>
